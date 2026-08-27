@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EventPlus – Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Inscription au congrès</h1>
+
+  <form id="formInscription">
+
+    <label>Nom :</label>
+    <input type="text" id="nom" name="nom">
+
+    <label>Prénom :</label>
+    <input type="text" id="prenom" name="prenom">
+
+    <label>Email :</label>
+    <input type="email" id="email" name="email">
+
+    <label>Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone">
+
+<!-- Type de participant -->
+<label>Type de participant :</label>
+<div class="groupe-choix">
+  <label><input type="radio" name="type" value="etudiant"> Étudiant</label>
+  <label><input type="radio" name="type" value="chercheur"> Chercheur</label>
+  <label><input type="radio" name="type" value="industriel"> Industriel</label>
+</div>
+
+<!-- Événement -->
+<label>Choix de l'événement :</label>
+<div class="groupe-choix">
+  <label><input type="checkbox" name="evenement" value="congres"> Congrès</label>
+  <label><input type="checkbox" name="evenement" value="workshop"> Workshop</label>
+</div>
+
+<!-- Boutons -->
+    <div class="boutons">
+      <button type="button" id="btnInscrire">S'inscrire</button>
+      <button type="button" id="btnAfficher">Afficher</button>
+    </div>
+
+  </form>
+
+  <div id="resultat"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

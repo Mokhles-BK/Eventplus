@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Zone radio et checkbox */
+.groupe-choix {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.groupe-choix label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Boutons */
+.boutons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#btnInscrire {
+  background: #2ecc71;
+  color: white;
+  font-weight: bold;
+}
+
+#btnAfficher {
+  background: #3498db;
+  color: white;
+}
+
+/* Zone résultat */
+#resultat {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 28px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  display: none;
+}
