@@ -1,52 +1,51 @@
-# EventPlus — Gestion des inscriptions à un congrès
+# EventPlus — Congress Registration Management
 
-Mini-module PHP orienté objet permettant de gérer les inscriptions de participants
-à un congrès scientifique ou à un workshop, pour la plateforme fictive **EventPlus**.
+Object-oriented PHP mini-app for managing participant registrations to a
+scientific congress or workshop, for the fictional platform **EventPlus**.
 
-## Fonctionnalités
+## Features
 
-- Formulaire d'inscription (HTML + CSS + JS) avec validation côté client
-  (regex nom/prénom, email, téléphone).
-- Choix du type de participant (Étudiant / Chercheur / Industriel) et de
-  l'événement (Congrès / Workshop, cases à cocher — un participant peut
-  s'inscrire aux deux).
-- Hiérarchie de classes PHP orientée objet :
-  - `Evenement` — classe mère (titre, date, lieu, capacité).
-  - `Congres` — hérite de `Evenement`, ajoute thème/programme, gère la liste
-    des participants et le comptage par type.
-  - `Workshop` — hérite de `Evenement`, ajoute formation/formateur et gère
-    la liste des apprenants.
-  - `Participant` — nom, prénom, email, téléphone, type, ateliers choisis ;
-    validation des données et affichage.
-- `Controller.php` — point d'entrée AJAX (JSON) qui reçoit les données du
-  formulaire, instancie les classes et déclenche l'inscription ou l'affichage.
-- Persistance simple par fichiers texte (`participant.txt`, `apprenant.txt`),
-  avec détection des doublons par email.
+- Registration form (HTML + CSS + JS) with client-side validation
+  (name/first name regex, email, phone).
+- Choice of participant type (Student / Researcher / Industry) and event
+  (Congress / Workshop, checkboxes — a participant can register for both).
+- Object-oriented PHP class hierarchy:
+  - `Evenement` — base class (title, date, location, capacity).
+  - `Congres` — extends `Evenement`, adds theme/program, manages the list
+    of participants and counts by type.
+  - `Workshop` — extends `Evenement`, adds training title/instructor and
+    manages the list of attendees.
+  - `Participant` — name, first name, email, phone, type, chosen sessions;
+    data validation and display.
+- `Controller.php` — AJAX (JSON) entry point that receives form data,
+  instantiates the classes, and handles registration or display.
+- Simple text-file persistence (`participant.txt`, `apprenant.txt`),
+  with duplicate detection by email.
 
 ## Structure
 
 ```
 EventPlus/
-├── Inscription.html      # Formulaire
+├── Inscription.html      # Registration form
 ├── style.css
-├── script.js              # Validation + appels AJAX vers Controller.php
-├── Evenement.php          # Classe mère
+├── script.js              # Validation + AJAX calls to Controller.php
+├── Evenement.php          # Base class
 ├── Congres.php
 ├── Workshop.php
 ├── Participant.php
-├── Controller.php         # Point d'entrée backend (JSON)
-├── participant.txt        # généré à l'exécution (ignoré par git)
-└── apprenant.txt          # généré à l'exécution (ignoré par git)
+├── Controller.php         # Backend entry point (JSON)
+├── participant.txt        # generated at runtime (git-ignored)
+└── apprenant.txt          # generated at runtime (git-ignored)
 ```
 
-## Lancer le projet
+## Running the project
 
-Nécessite PHP (≥ 7.4, testé avec les types stricts de PHP 8).
+Requires PHP (≥ 7.4, tested with PHP 8 strict types).
 
 ```bash
 cd EventPlus
 php -S localhost:8000
 ```
 
-Puis ouvrir [http://localhost:8000/Inscription.html](http://localhost:8000/Inscription.html)
-dans le navigateur.
+Then open [http://localhost:8000/Inscription.html](http://localhost:8000/Inscription.html)
+in your browser.
